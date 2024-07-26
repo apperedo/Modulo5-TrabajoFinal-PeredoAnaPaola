@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Curso, Alumno
+from .models import Curso, Alumno, Profesor
 
 class CursoSerializer(serializers.ModelSerializer):
     class Meta:
@@ -11,7 +11,12 @@ class AlumnoSerializer(serializers.ModelSerializer):
         model = Alumno
         fields = "__all__"
         
-class ReporteAlumnoSerializer(serializers.Serializer):
+class ProfesorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Profesor
+        fields = "__all__"
+        
+class ReporteCursosSerializer(serializers.Serializer):
     cantidad = serializers.ImageField()
-    alumno = AlumnoSerializer(many=True)
+    cursos = CursoSerializer(many=True)
     
