@@ -10,7 +10,8 @@ router.register(r"profesor", views.ProfesorViewSet)
 urlpatterns = [
     path('cursos/', views.CursoCreateView.as_view()),
     path('alumnos/', views.AlumnoCreateView.as_view()),
-    path('cursos/', views.ProfesorCreateView.as_view()),
+    path('profesores/', views.ProfesorCreateView.as_view()),
     path('cursos/cantidad/', views.curso_count),
+    path('cursos/tipo/', views.curso_tipo),
     path('',include(router.urls))
 ]

@@ -47,11 +47,11 @@ class CursoViewSet(viewsets.ModelViewSet):
     serializer_class = CursoSerializer
     
 class AlumnoViewSet(viewsets.ModelViewSet):
-    queryset = Alumno.objects.all().order_by('nombre')
+    queryset = Alumno.objects.all().order_by('nombre_completo')
     serializer_class = AlumnoSerializer
     
 class ProfesorViewSet(viewsets.ModelViewSet):
-    queryset = Profesor.objects.all().order_by('nombre')
+    queryset = Profesor.objects.all().order_by('nombre_completo')
     serializer_class = ProfesorSerializer
     
 class CursoCreateView(generics.CreateAPIView, generics.ListAPIView):
@@ -59,11 +59,11 @@ class CursoCreateView(generics.CreateAPIView, generics.ListAPIView):
     serializer_class = CursoSerializer
     
 class AlumnoCreateView(generics.CreateAPIView, generics.ListAPIView):
-    queryset = Alumno.objects.all().order_by('nombre')
+    queryset = Alumno.objects.all().order_by('nombre_completo')
     serializer_class = AlumnoSerializer
     
 class ProfesorCreateView(generics.CreateAPIView, generics.ListAPIView):
-    queryset = Profesor.objects.all().order_by('nombre')
+    queryset = Profesor.objects.all().order_by('nombre_completo')
     serializer_class = ProfesorSerializer
     
 @api_view(['GET'])
